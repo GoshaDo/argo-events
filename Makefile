@@ -62,11 +62,11 @@ dist/$(BINARY_NAME):
 	go build -v -ldflags '${LDFLAGS}' -o ${DIST_DIR}/$(BINARY_NAME) ./cmd
 
 dist/$(BINARY_NAME)-%:
-	CGO_ENABLED=0 $(GOARGS) go build -v -ldflags '${LDFLAGS}' -o ${DIST_DIR}/$(BINARY_NAME)-$* ./cmd
+	CGO_ENABLED=1 $(GOARGS) go build -v -ldflags '${LDFLAGS}' -o ${DIST_DIR}/$(BINARY_NAME)-$* ./cmd
 
 .PHONY: image
-image: clean dist/$(BINARY_NAME)-linux-amd64
-	DOCKER_BUILDKIT=1 docker build -t $(IMAGE_NAMESPACE)/$(BINARY_NAME):$(VERSION)  --target $(BINARY_NAME) -f $(DOCKERFILE) .
+image: #clean dist/$(BINARY_NAME)-linux-arm64
+	DOCKER_BUILDKIT=1 docker buildx build --platform linux/amd64 -t goshad/argo-events:latest  --target $(BINARY_NAME) -f $(DOCKERFILE) .
 	@if [ "$(DOCKER_PUSH)" = "true" ]; then docker push $(IMAGE_NAMESPACE)/$(BINARY_NAME):$(VERSION); fi
 ifeq ($(K3D),true)
 	k3d image import $(IMAGE_NAMESPACE)/$(BINARY_NAME):$(VERSION)

@@ -91,13 +91,16 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.0.0 // indirect
 	github.com/Azure/azure-sdk-for-go/sdk/internal v1.0.0 // indirect
 	github.com/DataDog/zstd v1.5.0 // indirect
+	github.com/Rookout/GoSDK v0.1.27 // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/apache/pulsar-client-go/oauth2 v0.0.0-20220120090717-25e59572242e // indirect
 	github.com/danieljoos/wincred v1.0.2 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/dvsekhvalnov/jose2go v0.0.0-20200901110807-248326c1351b // indirect
 	github.com/emicklei/go-restful/v3 v3.8.0 // indirect
+	github.com/fallais/logrus-lumberjack-hook v0.0.0-20210917073259-3227e1ab93b0 // indirect
 	github.com/felixge/httpsnoop v1.0.3 // indirect
+	github.com/go-errors/errors v1.4.1 // indirect
 	github.com/go-openapi/spec v0.20.4 // indirect
 	github.com/godbus/dbus v0.0.0-20190726142602-4481cbc300e2 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
@@ -107,6 +110,7 @@ require (
 	github.com/gsterjov/go-libsecret v0.0.0-20161001094733-a6f4afe4910c // indirect
 	github.com/hashicorp/errwrap v1.0.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
+	github.com/hashicorp/golang-lru v0.5.4 // indirect
 	github.com/keybase/go-keychain v0.0.0-20190712205309-48d3d31d256d // indirect
 	github.com/klauspost/cpuid/v2 v2.1.0 // indirect
 	github.com/linkedin/goavro/v2 v2.9.8 // indirect
@@ -117,8 +121,11 @@ require (
 	github.com/pelletier/go-toml/v2 v2.0.1 // indirect
 	github.com/pierrec/lz4/v4 v4.1.17 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
+	github.com/stretchr/objx v0.4.0 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
 	github.com/xdg-go/stringprep v1.0.3 // indirect
+	github.com/yhirose/go-peg v0.0.0-20210804202551-de25d6753cf1 // indirect
+	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
 	sigs.k8s.io/json v0.0.0-20211208200746-9f7c6b3444d2 // indirect
 )
 

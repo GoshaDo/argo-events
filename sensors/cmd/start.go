@@ -11,6 +11,7 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"sigs.k8s.io/controller-runtime/pkg/manager/signals"
 
+	rook "github.com/Rookout/GoSDK"
 	argoevents "github.com/argoproj/argo-events"
 	"github.com/argoproj/argo-events/common"
 	"github.com/argoproj/argo-events/common/logging"
@@ -21,6 +22,10 @@ import (
 )
 
 func Start() {
+	err := rook.Start(rook.RookOptions{Labels: map[string]string{"app": "argo-sensor"}})
+	if err != nil {
+		fmt.Println(err)
+	}
 	logger := logging.NewArgoEventsLogger().Named("sensor")
 	kubeConfig, _ := os.LookupEnv(common.EnvVarKubeConfig)
 	restConfig, err := common.GetClientConfig(kubeConfig)

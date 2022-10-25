@@ -151,6 +151,22 @@ func buildDeployment(args *AdaptorArgs, eventBus *eventbusv1alpha1.EventBus) (*a
 			Name:      "POD_NAME",
 			ValueFrom: &corev1.EnvVarSource{FieldRef: &corev1.ObjectFieldSelector{FieldPath: "metadata.name"}},
 		},
+		{
+			Name:  "ROOKOUT_TOKEN",
+			Value: "0eef79ca620dc1dcebc31df67dff724419b70fd8032c50dbe164d878967678ea",
+		},
+		{
+			Name:  "ROOKOUT_REMOTE_ORIGIN",
+			Value: "https://github.com/argoproj/argo-events.git",
+		},
+		{
+			Name:  "ROOKOUT_COMMIT",
+			Value: "master",
+		},
+		{
+			Name:  "DEBUG_LOG",
+			Value: "true",
+		},
 	}
 
 	busConfigBytes, err := json.Marshal(eventBus.Status.Config)
